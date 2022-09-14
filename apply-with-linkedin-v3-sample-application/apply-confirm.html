@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Jquery   -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!--Materialize-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <title> AWLI - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+      }
+
+      $('#awli-widget').attr('data-api-key', $.urlParam('key'));
+      $('#awli-widget').attr('data-integration-context', $.urlParam('ic'));
+
+      var event = new Event('awli-widget-load');
+      window.dispatchEvent(event);
+
+    });
+  </script>
+</head>
+
+<body>
+  <nav>
+    <div class=" light-blue darken-2 nav-wrapper row">
+      <div class="col s12">
+        <a href="#!" class="brand-logo">Your Application Name</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="//developer.linkedin.com/docs/lts/apply-with-linkedin/d2p-self-serve">Documentation Home For
+              ATS</a>
+          </li>
+          <li>
+            <a href="//developer.linkedin.com/docs/lts/apply-with-linkedin/d2c-self-serve">Documentation Home For
+              non-ATS Apps</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container center white-text row">
+    <div class="col s12 m12">
+      <h1 class="page-title"> <span class="amber-text"></span><span class="light-blue-text">Apply With LinkedIn -
+          Developer Demo</span></h2>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+
+      <div class="section"></div>
+      <div class="divider"></div>
+      <div class="grey lighten-4" id="job-application">
+        <div class="container">
+          <div class="section"></div>
+          <h4 class="blue-grey-text text-darken-3">Thanks for Applying!</h4>
+          <h6>Director of Product Management [Sample]</h6>
+          <div class="section"></div>
+
+          <div id="widget-container">
+            <script src="https://platform.linkedin.com/xdoor/scripts/in.js">
+              api_key: 'Please add client id of your app'
+              extensions: AwliWidget @https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3
+            </script>
+            <div class="container">
+              <script type="IN/AwliWidget" data-company-job-code='testJob123'
+                data-integration-context="urn:li:organization:'add integration context'" data-mode="CONVERSION"
+                data-callback-method="handleProfileData" data-height="50"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer light-blue">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">LinkedIn</h5>
+            <p class="grey-text text-lighten-4">This is a developer demo of Apply With LinkedIn.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="">AWLI 3.0</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">© 2022 Copyright Text
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>

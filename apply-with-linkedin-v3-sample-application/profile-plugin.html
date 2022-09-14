@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Widget</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="https://platform.linkedin.com/xdoor/scripts/in.js">
+      api_key: "<CUSTOMER_APPLICATION_CLIENT_ID>"
+      extensions: HcmWidget@https://www.linkedin.com/recruiter/widget/hcm
+    </script>
+
+    <script type="IN/HcmWidget"
+      data-widget-type="ATS"
+      data-ats-candidate-id="<Your ATS CANDIDATE ID for Cadidate>"
+      data-integration-context="<Integration Context Value of type urn:li:organization:id>"
+      data-show-unlink-url="true"
+      data-confirm-unlink="true"
+      data-onlink="link"
+      data-onunlink="unlink"
+      data-width="800">
+    </script>
+
+    <script>
+      function link(personUrn) {
+         console.log("Linked: ", personUrn);
+      }
+      function unlink(personUrn) {
+         console.log("Unlinked: ", personUrn);
+      }
+    </script>
+  </body>
+</html>
