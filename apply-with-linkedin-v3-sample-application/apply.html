@@ -91,12 +91,12 @@
 
   <div id="widget-container">
     <script src="https://platform.linkedin.com/xdoor/scripts/in.js">
-      api_key: 'please add client id of your app'
+      api_key: {customer app API Key goes here}
       extensions: AwliWidget @https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3
     </script>
     <div class="container">
-      <script type="IN/AwliWidget" data-company-job-code='add job code'
-        data-integration-context="urn:li:organization:'add integration context'" data-mode="BUTTON_DATA"
+      <script type="IN/AwliWidget" data-company-job-code=”{UniqueJobCode}”
+        data-integration-context="urn:li:organization:{id}" data-mode="BUTTON_DATA"
         data-callback-method="handleProfileData" data-height="50"></script>
     </div>
   </div>
